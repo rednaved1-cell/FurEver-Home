@@ -857,17 +857,57 @@ html {
 }
 
 /* Food Guide Section */
+
+.food-box ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.food-box ul li {
+  margin-bottom: 10px;
+  line-height: 2;
+  color: #444;
+  position: relative;
+  padding-left: 28px; 
+}
+
+/* 🐾 Custom paw bullet */
+.food-box ul li::before {
+  content: "🐾";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  font-size: rem;
+  color: #28a745;
+}
+
+/* Red paws for Cannot Eat box */
+.cannot-eat ul li::before {
+  color: #dc3545;
+}
+
 .food-guide {
+  position: relative; /* makes bottom-strip anchor here */
   background: #fff8f2;
-  padding: 60px 20px;
+  padding: 200px 100px;
   text-align: center;
   font-family: Arial, sans-serif;
 }
 
+.bottom-strip {
+  background: #2c3e50;   
+  height: 100px;         
+  width: 100%;           
+  position: absolute; /* relative to .food-guide */
+  bottom: 0;   /* stick to bottom */
+  left: 0;
+  z-index: 1;
+}
+
 .food-guide h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-  color: #333;
+  font-size: 3rem;
+  margin-top: -150px;
+  color: #4e3030;
 }
 
 .food-guide .tagline {
@@ -886,29 +926,23 @@ html {
 
 .food-box {
   flex: 1;
-  min-width: 250px;
-  max-width: 350px;
+  min-width: 350px;
+  max-width: 450px;
   background: #fff;
-  border-radius: 12px;
-  padding: 20px;
+  border-radius: 15px;
+  padding: 40px;
   text-align: left;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 1s ease;
+}
+
+.food-box:hover {
+  transform: translateY(-4px);
 }
 
 .food-box h3 {
   margin-bottom: 15px;
   font-size: 1.2rem;
-}
-
-.food-box ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.food-box ul li {
-  margin-bottom: 8px;
-  line-height: 1.5;
-  color: #444;
 }
 
 /* ✅ Can Eat Styling */
@@ -931,7 +965,7 @@ html {
 
 /* Expandable More Info */
 .more-info {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: #333;
   cursor: pointer;
 }
@@ -941,3 +975,55 @@ html {
   cursor: pointer;
   margin-bottom: 8px;
 }
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .food-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .food-box {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .food-guide h2 {
+    font-size: 1.6rem;
+  }
+
+  .food-guide .tagline {
+    font-size: 0.9rem;
+  }
+
+  .food-box h3 {
+    font-size: 1rem;
+  }
+}
+
+.bottom-strip {
+  background: #2c3e50;   
+  height: 150px;         
+  width: 100%;           
+  position: relative;
+  z-index: 1;
+  margin-top: -50px; /* overlaps upward so images can "sit" */
+}
+
+.food-guide-img {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+  z-index: 2;  /* make sure images stay on top of strip */
+}
+
+.food-guide-img img {
+  max-width: 250px;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
