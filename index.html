@@ -371,8 +371,44 @@
           <img src="images/catsilog.png" alt="Success 8">
 
           <!-- Button -->
-          <button class="see-more-button">See more Stories...</button>
+          <button class="see-more-stories-btn">See more Stories...</button>
         </div>
+
+<!-- Second Modal (Success Stories) -->
+<div id="storiesModal2" class="modal">
+  <div class="modal-content">
+    <span class="close2">&times;</span>
+    <h2>Rescue Stories</h2>
+    <div class="story-grid">
+      <div class="story-card">
+        <img src="https://placekitten.com/300/200" alt="Bella">
+        <h3>Bella</h3>
+        <p>Rescued from the streets, Bella now spends her days napping in sunny spots and cuddling with her new family.</p>
+      </div>
+      <div class="story-card">
+        <img src="https://place-puppy.com/300x200" alt="Max">
+        <h3>Max</h3>
+        <p>Found injured, Max was nursed back to health and adopted by a loving couple who take him hiking every weekend.</p>
+      </div>
+      <div class="story-card">
+        <img src="https://placekitten.com/301/200" alt="Luna">
+        <h3>Luna</h3>
+        <p>Once a stray, Luna now has a cozy home and a best friend — another rescued cat named Milo.</p>
+      </div>
+      <div class="story-card">
+        <img src="https://place-puppy.com/301x200" alt="Charlie">
+        <h3>Charlie</h3>
+        <p>Charlie was found abandoned but now enjoys a big backyard and endless fetch sessions.</p>
+      </div>
+      <div class="story-card">
+        <img src="https://placekitten.com/302/200" alt="Milo">
+        <h3>Milo</h3>
+        <p>Saved from a flood, Milo has grown into a gentle companion who loves everyone he meets.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 
         <div class="info-section how-we-rescue">
           <h3>🐾 How We Rescue</h3>
@@ -500,5 +536,28 @@
       });
     });
   </script>
+
+  <script>
+  // Second Modal (Success Stories)
+  const modal2 = document.getElementById("storiesModal2");
+  const btn2 = document.querySelector(".see-more-stories-btn");
+  const span2 = document.querySelector(".close2");
+
+  btn2.onclick = function() {
+    modal2.style.display = "block";
+  }
+
+  span2.onclick = function() {
+    modal2.style.display = "none";
+  }
+
+  window.addEventListener("click", function(event) {
+    if (event.target === modal2) {
+      modal2.style.display = "none";
+    }
+  });
+  </script>
+
+  
 </body>
 </html>
