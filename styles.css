@@ -871,73 +871,44 @@ html {
   padding-left: 28px; 
 }
 
-/* 🐾 Custom paw bullet */
-.food-box ul li::before {
-  content: "🐾";
-  position: absolute;
-  left: 0;
-  top: 2px;
-  font-size: rem;
-  color: #28a745;
-}
-
-/* Red paws for Cannot Eat box */
-.cannot-eat ul li::before {
-  color: #dc3545;
-}
-
 .food-guide {
-  position: relative; /* makes bottom-strip anchor here */
+  position: relative;
   background: #fff8f2;
-  padding: 200px 100px;
+  padding: 100px 60px 180px; /* bottom padding for pets */
   text-align: center;
   font-family: Arial, sans-serif;
 }
 
-.bottom-strip {
-  background: #2c3e50;   
-  height: 100px;         
-  width: 100%;           
-  position: absolute; /* relative to .food-guide */
-  bottom: 0;   /* stick to bottom */
-  left: 0;
-  z-index: 1;
-}
-
 .food-guide h2 {
-  font-size: 3rem;
-  margin-top: -150px;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
   color: #4e3030;
 }
 
 .food-guide .tagline {
   font-size: 1rem;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   color: #666;
 }
 
+/* Cards container */
 .food-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 25px;
-  margin-bottom: 20px;
+  gap: 30px;
+  margin-bottom: 25px;
 }
 
 .food-box {
   flex: 1;
-  min-width: 350px;
+  min-width: 320px;
   max-width: 450px;
-  background: #fff;
-  border-radius: 15px;
-  padding: 40px;
+  background: #fefefe;
+  border-radius: 12px;
+  padding: 30px;
   text-align: left;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-  transition: transform 1s ease;
-}
-
-.food-box:hover {
-  transform: translateY(-4px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
 .food-box h3 {
@@ -945,7 +916,32 @@ html {
   font-size: 1.2rem;
 }
 
-/* ✅ Can Eat Styling */
+.food-box ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.food-box ul li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 24px;
+}
+
+.food-box ul li::before {
+  content: "🐾";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1rem;
+  color: #28a745;
+}
+
+.cannot-eat ul li::before {
+  color: #dc3545;
+}
+
+/* Can / Cannot Eat Colors */
 .can-eat {
   border: 2px solid #28a745;
 }
@@ -954,7 +950,6 @@ html {
   color: #28a745;
 }
 
-/* ❌ Cannot Eat Styling */
 .cannot-eat {
   border: 2px solid #dc3545;
 }
@@ -963,11 +958,10 @@ html {
   color: #dc3545;
 }
 
-/* Expandable More Info */
+/* Expandable */
 .more-info {
   font-size: 1rem;
-  color: #333;
-  cursor: pointer;
+  margin-top: 10px;
 }
 
 .more-info summary {
@@ -976,30 +970,46 @@ html {
   margin-bottom: 8px;
 }
 
-/* 📱 Responsive Design */
+/* Bottom strip */
+.bottom-strip {
+  background: #2c3e50;
+  height: 120px;
+  width: 100%;
+  position: relative;
+  margin-top: 80px;
+}
+
+/* Pet images */
+.pet-left {
+  height: 280px;
+  position: absolute;
+  left: 20px;
+  bottom: 0;
+}
+
+.pet-right {
+  height: 350px;
+  position: absolute;
+  right: 20px;
+  bottom: 0;
+}
+
+/* Mobile */
 @media (max-width: 768px) {
   .food-container {
     flex-direction: column;
     align-items: center;
   }
-
   .food-box {
     width: 100%;
-    max-width: 400px;
+    max-width: 380px;
+  }
+  .food-guide-img {
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+  }
+  .food-guide-img img {
+    height: 140px;
   }
 }
-
-@media (max-width: 480px) {
-  .food-guide h2 {
-    font-size: 1.6rem;
-  }
-
-  .food-guide .tagline {
-    font-size: 0.9rem;
-  }
-
-  .food-box h3 {
-    font-size: 1rem;
-  }
-}
-
