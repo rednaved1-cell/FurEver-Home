@@ -454,7 +454,7 @@ html {
   padding: 3rem 5%;
   min-height: 100vh;
   background-color: #f8f2e8;
-;
+
 }
 
 /* ===== LEFT: SPECIAL RESCUES ===== */
@@ -572,7 +572,7 @@ html {
   color: #462a0d;
   font-size: 4rem;
   font-family: "Playfair Display", "Georgia", serif;
-  font-weight: 3000px;
+  font-weight: 700;
   letter-spacing: 1.5px;
   margin-bottom: 50px;
   text-transform: capitalize;
@@ -1003,9 +1003,15 @@ html {
   transition: background 0.3s, transform 0.3s;
 }
 
-.see-more-button:hover {
+.see-more-stories-btn:hover {
   background-color: #ff6347;
   transform: translateY(-3px);
+}
+
+/* Fade-up keyframes used by .success-gallery images */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 
