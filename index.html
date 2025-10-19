@@ -507,56 +507,7 @@
   </div>
 </div>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-
-    document.querySelectorAll('.flip-card').forEach(card => {
-  card.addEventListener('click', () => {
-    card.classList.toggle('flipped');  // Toggle the flip class
-  });
-});
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate");
-          }
-        });
-      }, { threshold: 0.2 });
-
-      document.querySelectorAll('.info-column, .success-gallery img')
-        .forEach(el => observer.observe(el));
-
-      // JavaScript for the modal
-      document.getElementById('seeMoreBtn').addEventListener('click', function() {
-        document.getElementById('modal').style.display = 'flex';
-      });
-
-      document.getElementById('closeBtn').addEventListener('click', function() {
-        document.getElementById('modal').style.display = 'none';
-      });
-    });
-  </script>
-
-  <script>
-  // Second Modal (Success Stories)
-  const modal2 = document.getElementById("storiesModal2");
-  const btn2 = document.querySelector(".see-more-stories-btn");
-  const span2 = document.querySelector(".close2");
-
-  btn2.onclick = function() {
-    modal2.style.display = "block";
-  }
-
-  span2.onclick = function() {
-    modal2.style.display = "none";
-  }
-
-  window.addEventListener("click", function(event) {
-    if (event.target === modal2) {
-      modal2.style.display = "none";
-    }
-  });
-  </script>
+  <script src="scripts/main.js"></script>
 
   
 </body>
