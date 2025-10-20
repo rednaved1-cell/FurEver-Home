@@ -676,10 +676,10 @@ html {
 .midnight-strip {
   background: #2c3e50;   
   height: 150px;         
-  width: 250%;           
+  width: 99.5vw;           
   position: relative;
-  z-index: 1;
-  left: -40%;
+  left: 50%;
+  transform: translateX(-50%);
   margin-top: -60px;
 }
 
@@ -1018,7 +1018,6 @@ html {
   transform: translateY(-3px);
 }
 
-/* Fade-up keyframes used by .success-gallery images */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(12px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -1039,7 +1038,6 @@ html {
   margin-right: -100px;
 }
 
-/* Hover effect */
 .how-we-rescue:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 25px rgba(28, 49, 68, 0.2);
@@ -1051,16 +1049,17 @@ html {
   font-family: Arial, sans-serif;
   position: relative;
   min-height: 70vh;
+
+  /* Animation */
+  animation: sectionFadeIn 1s ease-out forwards;
 }
 
-/* GRID: 70% left (food guide), 30% right (coats + trivia) */
 .food-layout {
   display: grid;
-  grid-template-columns: 50% 50%;
-  gap: 40px;
-  align-items: start;
-  width: 90%;
-  margin: 0 auto;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  width: 100%;
+  margin: 0;
 }
 
 /* LEFT SIDE */
@@ -1076,18 +1075,17 @@ html {
   color: #555;
 }
 
-/* Makes the food boxes flow vertically */
 .food-container {
   display: flex;
-  flex-direction: row; /* keep side by side */
-  justify-content: flex-start; /* align to the left */
+  flex-direction: row; 
+  justify-content: flex-start;
   align-items: flex-start;
   margin-left: 330px;
-  gap: 25px; /* space between boxes */
+  gap: 25px;
 }
 
 .food-box {
-  width: 45%; /* make each box about half of the left area */
+  width: 45%;
   background: #fff;
   border-radius: 12px;
   height: 400px;
@@ -1095,9 +1093,14 @@ html {
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
+.food-box { 
+  position: relative;
+  z-index: 3;
+}
+
 .can-eat {
-  border: 2px solid #28a745; /* green border */
-  border-left: 5px solid #28a745; /* thicker left border for style */
+  border: 2px solid #28a745;
+  border-left: 5px solid #28a745;
   background: #ebe8db;
   border-radius: 20px;
   padding: 50px;
@@ -1106,7 +1109,7 @@ html {
 }
 
 .cannot-eat {
-  border: 2px solid #c0392b; /* red border */
+  border: 2px solid #c0392b;
   border-left: 5px solid #c0392b;
   background: #ebe8db;
   border-radius: 20px;
@@ -1133,7 +1136,6 @@ html {
   display: none;
 }
 
-/* Hover effect on "See more specifics" */
 .more-info summary:hover {
   transform: translateY(-3px);
   color: #a52a2a;
@@ -1143,7 +1145,7 @@ html {
 /* Popup content box styling */
 .more-info[open] .popup-content {
   position: absolute;
-  top: -220px; /* moves the popup upward */
+  top: -220px;
   background: #fff;
   border-radius: 12px;
   padding: 20px;
@@ -1153,7 +1155,6 @@ html {
   z-index: 10;
 }
 
-/* Optional small arrow pointing down */
 .more-info[open] .popup-content::before {
   content: "";
   position: absolute;
@@ -1171,7 +1172,6 @@ html {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Right Side (Coats + Trivia) */
 .food-right {
   text-align: left;
 }
@@ -1191,22 +1191,21 @@ html {
 .bubbles {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px; /* slightly more spacing between bubbles */
+  gap: 14px;
   margin-top: 8px;
 }
 
 .bubble {
-  padding: 10px 20px; /* larger padding for size */
+  padding: 10px 20px;
   border-radius: 25px;
   font-size: 1rem;
   font-weight: 600;
   color: #fff;
-  border: 2px solid rgba(0, 0, 0, 0.1); /* subtle outline */
+  border: 2px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Hover effect for interactivity */
 .bubble:hover {
   transform: translateY(-3px);
   box-shadow: 0 5px 12px rgba(0, 0, 0, 0.25);
@@ -1218,7 +1217,6 @@ html {
 .bubble.black { background: #222; border-color: #444; }
 .bubble.white { background: #ffffff; color: #222; border-color: #ccc; }
 
-/* 🐶 Tricolor dogs: brown, white, and black */
 .bubble.tricolor {
   background: linear-gradient(90deg, #8b5e3c 0%, #ffffff 50%, #222 100%);
   border-color: #5a3b24;
@@ -1226,7 +1224,6 @@ html {
 }
 
 /* Cat coat colors */
-/* 🐱 Calico: orange, black, white */
 .bubble.calico {
   background: linear-gradient(90deg, #e67e22 0%, #fff 33%, #000 66%, #e67e22 100%);
   color: #111;
@@ -1236,7 +1233,6 @@ html {
                -1px -1px 2px rgba(0, 0, 0, 0.5);
 }
 
-/* 🐾 Tricolor: brown, white, black */
 .bubble.tricolor {
   background: linear-gradient(90deg, #8b5a2b 0%, #fff 50%, #000 100%);
   color: #111;
@@ -1246,7 +1242,6 @@ html {
                -1px -1px 2px rgba(0, 0, 0, 0.5);
 }
 
-/* 🎩 Tuxedo: black and white split */
 .bubble.tuxedo {
   background: linear-gradient(90deg, #000 45%, #fff 55%);
   color: #111;
@@ -1283,7 +1278,9 @@ html {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: flex-start; 
+  margin-left: 0; 
 }
 
 /* Flip Card */
@@ -1337,10 +1334,13 @@ html {
 .bottom-strip {
   background: #446c96;
   height: 160px;
-  width: 100%;
-  margin-top: 60px;
+  width: 100vw; 
   position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 60px;
   overflow: visible;
+  padding-bottom: 150px;
 }
 
 /* Shared pet image style */
@@ -1353,20 +1353,19 @@ html {
 
 .pet-left {
   position: absolute;
-  top: -310%;           /* adjust vertically beside the boxes */
-  left: 0%;           /* moves image closer or farther from boxes */
-  height: 550px;      /* adjust size */
-  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15)); /* soft shadow */
-  z-index: 2;
+  top: -310%;
+  left: 0%;
+  height: 550px;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
+  z-index: 1; /* lower than the boxes */
   transition: all 0.3s ease;
 }
 
 /* Right image (dog with food bowl) */
 .pet-right {
-  right: 0%;          /* adjust vertically beside the boxes */
-  right: -1%;           /* moves image closer or farther from boxes */
-  height: 500px;      /* adjust size */
-  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15)); /* soft shadow */
+  right: 0%;    
+  height: 500px;      
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
   z-index: 2;
   transition: all 0.3s ease;
 }
@@ -1387,4 +1386,51 @@ html {
     justify-content: center;
     margin-top: -80px;
   }
+}
+
+@keyframes sectionFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.footer {
+  background: #2c3e50;  
+  color: #fff;
+  width: 100vw;
+  text-align: center;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+  position: relative;  
+  z-index: 5;            
+  height: 30vh;
+  
+}
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 40px;    
+  font-size: 1.2rem;       
+  line-height: 1.6;       
+}
+
+.footer a {
+  color: #f4a261;
+  text-decoration: none;
+  font-weight: 700;      
+  font-size: 1.1rem;      
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer .copy {
+  margin-top: 15px;
+  font-size: 1rem;          
+  color: #fff;          
 }
