@@ -423,52 +423,118 @@
     </div>
   </section>
   
-<!-- Food Guide -->
+<!-- Food Guide Section --> 
 <section class="food-guide">
-  <h2>Food Guide</h2>
-  <p class="tagline">
-    What pets can and can't eat. Always consult a veterinarian for specific needs.
-  </p>
+  <div class="food-layout">
+    <!-- LEFT: Food Guide -->
+    <div class="food-left">
+      <h2>Food Guide</h2>
+      <p class="tagline">
+        What pets can and can't eat. Always consult a veterinarian for specific needs.
+      </p>
 
-  <div class="food-container">
-    <!-- ✅ Can Eat Box -->
-    <div class="food-box can-eat">
-      <h3>✅ Can Eat</h3>
-      <ul>
-        <li>Quality wet & dry pet food</li>
-        <li>Fresh water (always!)</li>
-        <li>Lean meats (cooked, unseasoned)</li>
-        <li>Some veggies (e.g., carrots, peas, pumpkin)</li>
-      </ul>
+      <div class="food-container">
+        <!-- ✅ Can Eat -->
+        <div class="food-box can-eat">
+          <h3>✅ Can Eat</h3>
+          <ul>
+            <li>Quality wet & dry pet food</li>
+            <li>Fresh water (always!)</li>
+            <li>Lean meats (cooked, unseasoned)</li>
+            <li>Some veggies (e.g., carrots, peas, pumpkin)</li>
+          </ul>
+        </div>
+
+        <!-- ❌ Cannot Eat -->
+        <div class="food-box cannot-eat">
+          <h3>❌ Cannot Eat</h3>
+          <ul>
+            <li>Chocolate, xylitol, grapes/raisins</li>
+            <li>Onions/garlic, alcohol, caffeine</li>
+            <li>Cooked bones (splinter risk)</li>
+            <li>Raw dough, spoiled foods</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Expandable -->
+      <details class="more-info">
+        <summary>See more specifics</summary>
+        <div class="popup-content">
+         <p>
+          Every pet is different — always check with your veterinarian if you're unsure about
+          a particular food item, especially for pets with allergies or medical conditions.
+         </p>
+        </div>
+      </details>
     </div>
 
-    <!-- ❌ Cannot Eat Box -->
-    <div class="food-box cannot-eat">
-      <h3>❌ Cannot Eat</h3>
-      <ul>
-        <li>Chocolate, xylitol, grapes/raisins</li>
-        <li>Onions/garlic, alcohol, caffeine</li>
-        <li>Cooked bones (splinter risk)</li>
-        <li>Raw dough, spoiled foods</li>
-      </ul>
+    <!-- RIGHT: Coats + Trivia -->
+    <div class="food-right">
+      <h2>Dog and Cat Coats You Might Meet</h2>
+      <p class="subtitle">Common coats & colors you might meet.</p>
+
+      <div class="coat-boxes">
+        <div class="coat-group">
+          <h3>Dog Coats</h3>
+          <div class="bubbles">
+            <span class="bubble golden">Golden</span>
+            <span class="bubble brindle">Brindle</span>
+            <span class="bubble black">Black</span>
+            <span class="bubble white">White</span>
+            <span class="bubble tricolor">Tricolor</span>
+          </div>
+        </div>
+
+        <div class="coat-group">
+          <h3>Cat Coats</h3>
+          <div class="bubbles">
+            <span class="bubble calico">Calico</span>
+            <span class="bubble tabby">Tabby</span>
+            <span class="bubble tuxedo">Tuxedo</span>
+            <span class="bubble ginger">Ginger</span>
+            <span class="bubble colorpoint">Color-point</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trivia Cards -->
+      <div class="trivia-section">
+        <h3>Trivia Corner</h3>
+        <p>Flip a card for a fun fact!</p>
+
+        <div class="trivia-grid">
+          <!-- Dog Fact -->
+          <div class="trivia-card">
+            <div class="card-inner">
+              <div class="card-front">🐶 Dog Fact</div>
+              <div class="card-back">Dogs can learn over 1000 words and gestures!</div>
+            </div>
+          </div>
+          <!-- Cat Fact -->
+          <div class="trivia-card">
+            <div class="card-inner">
+              <div class="card-front">🐱 Cat Fact</div>
+              <div class="card-back">Cats use their whiskers to measure gaps before jumping!</div>
+            </div>
+          </div>
+          <!-- Care Tip -->
+          <div class="trivia-card">
+            <div class="card-inner">
+              <div class="card-front">❤️ Care Tip</div>
+              <div class="card-back">Regular vet visits can catch hidden health problems early!</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <details class="more-info">
-    <summary>See more specifics</summary>
-    <p>
-      Every pet is different — always check with your veterinarian if you're unsure about
-      a particular food item, especially for pets with allergies or medical conditions.
-    </p>
-  </details>
-
-  <!-- Bottom strip with pet images -->
-  <div class="bottom-strip">
-    <div class="food-guide-img">
-      <img src="images/Food-guide2.png" class="pet-left">
-      <img src="images/Food-guide.png" class="pet-right">
-    </div>
-  </div>
+<!-- Bottom strip -->
+<div class="bottom-strip">
+  <img src="images/Food-guide2.png" alt="Cat and dog" class="pet pet-left">
+  <img src="images/Food-guide.png" alt="Dog with food" class="pet pet-right">
+</div>
 </section>
 
   <!-- 🦶 FOOTER -->

@@ -1045,160 +1045,346 @@ html {
   box-shadow: 0 12px 25px rgba(28, 49, 68, 0.2);
 }
 
-/* Food Guide Section */
-
-.food-box ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.food-box ul li {
-  margin-bottom: 10px;
-  line-height: 2;
-  color: #444;
-  position: relative;
-  padding-left: 28px; 
-}
-
 .food-guide {
-  position: relative;
-  background: #fff8f2;
-  padding: 100px 60px 180px; /* bottom padding for pets */
-  text-align: center;
+  background: #fdf8f2;
+  padding: 60px 40px 160px;
   font-family: Arial, sans-serif;
+  position: relative;
+  min-height: 70vh;
 }
 
-.food-guide h2 {
+/* GRID: 70% left (food guide), 30% right (coats + trivia) */
+.food-layout {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 40px;
+  align-items: start;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* LEFT SIDE */
+.food-left h2 {
   font-size: 2.5rem;
   margin-bottom: 10px;
-  color: #4e3030;
+  color: #a52a2a;
 }
 
-.food-guide .tagline {
-  font-size: 1rem;
-  margin-bottom: 40px;
-  color: #666;
+.food-left .tagline {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #555;
 }
 
-/* Cards container */
+/* Makes the food boxes flow vertically */
 .food-container {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
-  margin-bottom: 25px;
+  flex-direction: row; /* keep side by side */
+  justify-content: flex-start; /* align to the left */
+  align-items: flex-start;
+  margin-left: 330px;
+  gap: 25px; /* space between boxes */
 }
 
 .food-box {
-  flex: 1;
-  min-width: 320px;
-  max-width: 450px;
-  background: #fefefe;
+  width: 45%; /* make each box about half of the left area */
+  background: #fff;
   border-radius: 12px;
-  padding: 30px;
-  text-align: left;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  height: 400px;
+  padding: 60px 25px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-.food-box h3 {
-  margin-bottom: 15px;
-  font-size: 1.2rem;
-}
-
-.food-box ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.food-box ul li {
-  margin-bottom: 10px;
-  line-height: 1.6;
-  position: relative;
-  padding-left: 24px;
-}
-
-.food-box ul li::before {
-  content: "🐾";
-  position: absolute;
-  left: 0;
-  top: 0;
-  font-size: 1rem;
-  color: #28a745;
-}
-
-.cannot-eat ul li::before {
-  color: #dc3545;
-}
-
-/* Can / Cannot Eat Colors */
 .can-eat {
-  border: 2px solid #28a745;
-}
-
-.can-eat h3 {
-  color: #28a745;
+  border: 2px solid #28a745; /* green border */
+  border-left: 5px solid #28a745; /* thicker left border for style */
+  background: #ebe8db;
+  border-radius: 20px;
+  padding: 50px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  font-size: larger;
 }
 
 .cannot-eat {
-  border: 2px solid #dc3545;
+  border: 2px solid #c0392b; /* red border */
+  border-left: 5px solid #c0392b;
+  background: #ebe8db;
+  border-radius: 20px;
+  padding: 50px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-.cannot-eat h3 {
-  color: #dc3545;
-}
-
-/* Expandable */
 .more-info {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
   font-size: 1rem;
-  margin-top: 10px;
+  color: #333;
+  cursor: pointer;
 }
 
+/* Remove default arrow from summary */
 .more-info summary {
-  font-weight: 600;
-  cursor: pointer;
-  margin-bottom: 8px;
+  list-style: none;
+  outline: none;
 }
+.more-info summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Hover effect on "See more specifics" */
+.more-info summary:hover {
+  transform: translateY(-3px);
+  color: #a52a2a;
+  transition: 0.3s ease;
+}
+
+/* Popup content box styling */
+.more-info[open] .popup-content {
+  position: absolute;
+  top: -220px; /* moves the popup upward */
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  width: 380px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+  animation: fadeIn 0.3s ease;
+  z-index: 10;
+}
+
+/* Optional small arrow pointing down */
+.more-info[open] .popup-content::before {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 10px;
+  border-style: solid;
+  border-color: white transparent transparent transparent;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Right Side (Coats + Trivia) */
+.food-right {
+  text-align: left;
+}
+
+.food-right h2 {
+  font-size: 2.5rem;
+  color: #a52a2a;
+  margin-bottom: 10px;
+}
+
+.food-right .subtitle {
+  font-size: 1.5rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.bubbles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px; /* slightly more spacing between bubbles */
+  margin-top: 8px;
+}
+
+.bubble {
+  padding: 10px 20px; /* larger padding for size */
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  border: 2px solid rgba(0, 0, 0, 0.1); /* subtle outline */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover effect for interactivity */
+.bubble:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Dog coat colors */
+.bubble.golden { background: #e08b34; border-color: #b56a1e; }
+.bubble.brindle { background: #8b5e3c; border-color: #5a3b24; }
+.bubble.black { background: #222; border-color: #444; }
+.bubble.white { background: #ffffff; color: #222; border-color: #ccc; }
+
+/* 🐶 Tricolor dogs: brown, white, and black */
+.bubble.tricolor {
+  background: linear-gradient(90deg, #8b5e3c 0%, #ffffff 50%, #222 100%);
+  border-color: #5a3b24;
+  color: #fff;
+}
+
+/* Cat coat colors */
+/* 🐱 Calico: orange, black, white */
+.bubble.calico {
+  background: linear-gradient(90deg, #e67e22 0%, #fff 33%, #000 66%, #e67e22 100%);
+  color: #111;
+  font-weight: 700;
+  border-color: #333;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7),
+               -1px -1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* 🐾 Tricolor: brown, white, black */
+.bubble.tricolor {
+  background: linear-gradient(90deg, #8b5a2b 0%, #fff 50%, #000 100%);
+  color: #111;
+  font-weight: 700;
+  border-color: #333;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7),
+               -1px -1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* 🎩 Tuxedo: black and white split */
+.bubble.tuxedo {
+  background: linear-gradient(90deg, #000 45%, #fff 55%);
+  color: #111;
+  font-weight: 700;
+  border-color: #222;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8),
+               -1px -1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.bubble.tabby { background: #b88746; border-color: #805d2f; }
+.bubble.tuxedo {
+  background: linear-gradient(90deg, #000 45%, #fff 55%);
+  color: #111;
+  font-weight: 700;
+  border-color: #222;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8),
+               -1px -1px 2px rgba(0, 0, 0, 0.5);
+}
+.bubble.ginger { background: #d3502d; border-color: #a6361a; }
+.bubble.colorpoint { background: #9c7761; border-color: #6b4f3f; }
+
+/* Trivia Section */
+.trivia-section h3 {
+  margin-top: 30px;
+  margin-bottom: 5px;
+  color: #333;
+  margin-right: 100px;
+}
+.trivia-section p {
+  color: #777;
+  margin-bottom: 20px;
+}
+.trivia-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Flip Card */
+.trivia-card {
+  perspective: 1000px;
+  width: 250px;
+  height: 150px;
+}
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  cursor: pointer;
+}
+.trivia-card:hover .card-inner,
+.trivia-card:active .card-inner {
+  transform: rotateY(180deg);
+}
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  backface-visibility: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  padding: 15px;
+}
+.card-front {
+  background: #fff;
+  color: #333;
+}
+.card-back {
+  color: #fff;
+  transform: rotateY(180deg);
+}
+
+/* Each back color */
+.trivia-card:nth-child(1) .card-back { background: #f4a261; }
+.trivia-card:nth-child(2) .card-back { background: #2a9d8f; }
+.trivia-card:nth-child(3) .card-back { background: #e76f51; }
 
 /* Bottom strip */
 .bottom-strip {
-  background: #2c3e50;
-  height: 120px;
+  background: #446c96;
+  height: 160px;
   width: 100%;
+  margin-top: 60px;
   position: relative;
-  margin-top: 80px;
+  overflow: visible;
 }
 
-/* Pet images */
+/* Shared pet image style */
+.pet {
+  position: absolute;
+  bottom: 0;
+  height: 260px;
+  z-index: 3;
+}
+
 .pet-left {
-  height: 280px;
   position: absolute;
-  left: 20px;
-  bottom: 0;
+  top: -310%;           /* adjust vertically beside the boxes */
+  left: 0%;           /* moves image closer or farther from boxes */
+  height: 550px;      /* adjust size */
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15)); /* soft shadow */
+  z-index: 2;
+  transition: all 0.3s ease;
 }
 
+/* Right image (dog with food bowl) */
 .pet-right {
-  height: 350px;
-  position: absolute;
-  right: 20px;
-  bottom: 0;
+  right: 0%;          /* adjust vertically beside the boxes */
+  right: -1%;           /* moves image closer or farther from boxes */
+  height: 500px;      /* adjust size */
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15)); /* soft shadow */
+  z-index: 2;
+  transition: all 0.3s ease;
 }
 
-/* Mobile */
-@media (max-width: 768px) {
-  .food-container {
-    flex-direction: column;
-    align-items: center;
+/* Responsive (mobile view) */
+@media (max-width: 900px) {
+  .food-layout {
+    grid-template-columns: 1fr;
   }
-  .food-box {
-    width: 100%;
-    max-width: 380px;
+
+  .food-right {
+    margin-top: 40px;
   }
+
   .food-guide-img {
+    position: static;
+    display: flex;
     justify-content: center;
-    gap: 20px;
-    padding: 0;
-  }
-  .food-guide-img img {
-    height: 140px;
+    margin-top: -80px;
   }
 }
