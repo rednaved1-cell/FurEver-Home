@@ -1288,6 +1288,8 @@ html {
   perspective: 1000px;
   width: 250px;
   height: 150px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
 }
 .card-inner {
   position: relative;
@@ -1301,6 +1303,9 @@ html {
 .trivia-card:hover .card-inner,
 .trivia-card:active .card-inner {
   transform: rotateY(180deg);
+}
+.trivia-card:hover {
+  z-index: 10; 
 }
 .card-front,
 .card-back {
@@ -1368,6 +1373,7 @@ html {
   filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
   z-index: 2;
   transition: all 0.3s ease;
+  pointer-events: none;
 }
 
 /* Responsive (mobile view) */
@@ -1433,4 +1439,5 @@ html {
   margin-top: 15px;
   font-size: 1rem;          
   color: #fff;          
+}
 }
