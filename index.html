@@ -427,131 +427,6 @@
       <img src="images/awaw.png" alt="Dog collage">
     </div>
   </section>
-  
-<!-- Food Guide Section --> 
-<section id="food"class="food-guide">
-  <div class="food-layout">
-    <!-- LEFT: Food Guide -->
-    <div class="food-left">
-      <h2>Food Guide</h2>
-      <p class="tagline">
-        What pets can and can't eat. Always consult a veterinarian for specific needs.
-      </p>
-
-      <div class="food-container">
-        <!-- ✅ Can Eat -->
-        <div class="food-box can-eat">
-          <h3>✅ Can Eat</h3>
-          <ul>
-            <li>Quality wet & dry pet food</li>
-            <li>Fresh water (always!)</li>
-            <li>Lean meats (cooked, unseasoned)</li>
-            <li>Some veggies (e.g., carrots, peas, pumpkin)</li>
-          </ul>
-        </div>
-
-        <!-- ❌ Cannot Eat -->
-        <div class="food-box cannot-eat">
-          <h3>❌ Cannot Eat</h3>
-          <ul>
-            <li>Chocolate, xylitol, grapes/raisins</li>
-            <li>Onions/garlic, alcohol, caffeine</li>
-            <li>Cooked bones (splinter risk)</li>
-            <li>Raw dough, spoiled foods</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Expandable -->
-      <details class="more-info">
-        <summary>See more specifics</summary>
-        <div class="popup-content">
-         <p>
-          Every pet is different — always check with your veterinarian if you're unsure about
-          a particular food item, especially for pets with allergies or medical conditions.
-         </p>
-        </div>
-      </details>
-    </div>
-
-    <!-- RIGHT: Coats + Trivia -->
-    <div class="food-right">
-      <h2>Dog and Cat Coats You Might Meet</h2>
-      <p class="subtitle">Common coats & colors you might meet.</p>
-
-      <div class="coat-boxes">
-        <div class="coat-group">
-          <h3>Dog Coats</h3>
-          <div class="bubbles">
-            <span class="bubble golden">Golden</span>
-            <span class="bubble brindle">Brindle</span>
-            <span class="bubble black">Black</span>
-            <span class="bubble white">White</span>
-            <span class="bubble tricolor">Tricolor</span>
-          </div>
-        </div>
-
-        <div class="coat-group">
-          <h3>Cat Coats</h3>
-          <div class="bubbles">
-            <span class="bubble calico">Calico</span>
-            <span class="bubble tabby">Tabby</span>
-            <span class="bubble tuxedo">Tuxedo</span>
-            <span class="bubble ginger">Ginger</span>
-            <span class="bubble colorpoint">Color-point</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Trivia Cards -->
-      <div class="trivia-section">
-        <h3>Trivia Corner</h3>
-        <p>Flip a card for a fun fact!</p>
-
-        <div class="trivia-grid">
-          <!-- Dog Fact -->
-          <div class="trivia-card">
-            <div class="card-inner">
-              <div class="card-front">🐶 Dog Fact</div>
-              <div class="card-back">Dogs can learn over 1000 words and gestures!</div>
-            </div>
-          </div>
-          <!-- Cat Fact -->
-          <div class="trivia-card">
-            <div class="card-inner">
-              <div class="card-front">🐱 Cat Fact</div>
-              <div class="card-back">Cats use their whiskers to measure gaps before jumping!</div>
-            </div>
-          </div>
-          <!-- Care Tip -->
-          <div class="trivia-card">
-            <div class="card-inner">
-              <div class="card-front">❤️ Care Tip</div>
-              <div class="card-back">Regular vet visits can catch hidden health problems early!</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-<!-- Bottom strip -->
-<div class="bottom-strip">
-  <img src="images/Food-guide2.png" alt="Cat and dog" class="pet pet-left">
-  <img src="images/Food-guide.png" alt="Dog with food" class="pet pet-right">
-</div>
-</section>
-
-  <!-- 🦶 FOOTER -->
-  <footer class="footer" id="contact">
-    <div class="footer-container">
-      <p>📍 Philippines | 📧 contact@fureverhomeph.org | ☎ 0912-345-6789</p>
-      <p class="socials">
-        <a href="#">Facebook</a> • <a href="#">Instagram</a> • <a href="#">TikTok</a>
-      </p>
-      <p class="copy">© 2025 FurEver Home PH — From Stray to Stay.</p>
-    </div>
-  </footer>
 
   <!-- Pop-up Modal for More Stories (Added here for isolation) -->
 <div id="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); justify-content: center; align-items: center; z-index: 1000; pointer-events: auto;">
@@ -579,6 +454,384 @@
 </div>
 
   <script src="scripts/main.js"></script>
+
+  <!-- 🌟 Interactive Search Hub Section -->
+<section id="search-hub" class="search-hub">
+  <div class="search-container">
+    <h2>Find What You Need</h2>
+    <p class="tagline">Search or explore guides, trivia, and pet info 🐾</p>
+
+    <div class="search-box">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search for Food Guide, Color Coats, Trivia, or FAQ..."
+      />
+      <div class="suggestions" id="suggestionsList">
+        <p data-target="food">🍖 Food Guide</p>
+        <p data-target="coats">🎨 Color Coats</p>
+        <p data-target="trivia">💡 Trivia Corner</p>
+        <p data-target="faq">❓ FAQ</p>
+      </div>
+    </div>
+
+    <div class="info-sections">
+      <!-- Food Guide -->
+      <div class="info-box" id="food">
+        <h3>🍖 Food Guide</h3>
+        <p>
+          Learn what pets can and can’t eat — from everyday meals to special treats.
+          Always consult your vet for safe feeding advice.
+        </p>
+      </div>
+
+      <!-- Color Coats -->
+      <div class="info-box" id="coats">
+        <h3>🎨 Color Coats</h3>
+        <p>
+          Explore different dog and cat coat colors and patterns, from golden and brindle to
+          calico and tuxedo!
+        </p>
+      </div>
+
+      <!-- Trivia Corner -->
+      <div class="info-box" id="trivia">
+        <h3>💡 Trivia Corner</h3>
+        <p>
+          Fun facts about our furry friends! Did you know cats can jump up to six times
+          their height?
+        </p>
+      </div>
+
+      <!-- FAQ -->
+      <div class="info-box" id="faq">
+        <h3>❓ FAQ</h3>
+        <p>Common questions about adoption, pet care, and Furever Home PH.</p>
+        <ul>
+          <li><strong>How can I adopt a pet?</strong> Visit our adoption page and fill out the form.</li>
+          <li><strong>Is there an adoption fee?</strong> Yes, a small fee helps cover vet care and food.</li>
+          <li><strong>Can I surrender a pet?</strong> Contact us — we’ll assist with rehoming safely.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🦶 FOOTER -->
+  <footer class="footer" id="contact">
+    <div class="footer-container">
+      <p>📍 Philippines | 📧 contact@fureverhomeph.org | ☎ 0912-345-6789</p>
+      <p class="socials">
+        <a href="#">Facebook</a> • <a href="#">Instagram</a> • <a href="#">TikTok</a>
+      </p>
+      <p class="copy">© 2025 FurEver Home PH — From Stray to Stay.</p>
+    </div>
+  </footer>
+</section>
+
+<!-- 🐾 FOOD GUIDE MODAL -->
+<div id="foodModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2>🍖 Pet Food Guide</h2>
+    <p class="subtitle">Know what your dogs and cats can and can't eat!</p>
+
+    <div class="food-guide-container">
+      <!-- 🐶 Dog Section -->
+      <div class="food-section">
+        <h3>🐶 Dog Food Guide</h3>
+        <div class="food-columns">
+          <div class="can-eat">
+            <h4>✅ Can Eat</h4>
+            <ul>
+              <li>Boiled chicken</li>
+              <li>Carrots</li>
+              <li>Peanut butter (unsalted)</li>
+              <li>Rice and eggs</li>
+              <li>Apple slices (no seeds)</li>
+            </ul>
+          </div>
+          <div class="cant-eat">
+            <h4>🚫 Can’t Eat</h4>
+            <ul>
+              <li>Chocolate</li>
+              <li>Grapes and raisins</li>
+              <li>Garlic or onions</li>
+              <li>Avocado</li>
+              <li>Cooked bones</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 🐱 Cat Section -->
+      <div class="food-section">
+        <h3>🐱 Cat Food Guide</h3>
+        <div class="food-columns">
+          <div class="can-eat">
+            <h4>✅ Can Eat</h4>
+            <ul>
+              <li>Cooked chicken or fish</li>
+              <li>Eggs (cooked)</li>
+              <li>Pumpkin</li>
+              <li>Rice (small amounts)</li>
+              <li>Plain yogurt</li>
+            </ul>
+          </div>
+          <div class="cant-eat">
+            <h4>🚫 Can't Eat</h4>
+            <ul>
+              <li>Onions and garlic</li>
+              <li>Chocolate</li>
+              <li>Alcohol</li>
+              <li>Raw dough</li>
+              <li>Dairy (in large amounts)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 🎨 COLOR COATS MODAL -->
+<div id="coatModal" class="modal">
+  <div class="modal-content">
+    <span class="close-coat">&times;</span>
+    <h2>🎨 Pet Color Coats</h2>
+    <p class="subtitle">Explore the beautiful variety of dog and cat coat colors!</p>
+
+    <div class="coat-boxes">
+      <!-- 🐶 Dog Coats -->
+      <div class="coat-group">
+        <h3>🐶 Dog Coats</h3>
+        <div class="bubbles">
+          <span class="bubble golden">Golden</span>
+          <span class="bubble brindle">Brindle</span>
+          <span class="bubble black">Black</span>
+          <span class="bubble white">White</span>
+          <span class="bubble tricolor">Tricolor</span>
+        </div>
+      </div>
+
+      <!-- 🐱 Cat Coats -->
+      <div class="coat-group">
+        <h3>🐱 Cat Coats</h3>
+        <div class="bubbles">
+          <span class="bubble calico">Calico</span>
+          <span class="bubble tabby">Tabby</span>
+          <span class="bubble tuxedo">Tuxedo</span>
+          <span class="bubble ginger">Ginger</span>
+          <span class="bubble colorpoint">Color-point</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 💡 TRIVIA MODAL -->
+<div id="triviaModal" class="modal">
+  <div class="modal-content trivia-modal">
+    <span class="close-trivia">&times;</span>
+    <h2>💡 Trivia Corner</h2>
+    <p class="subtitle">Flip a card to reveal a fun fact or pet care tip!</p>
+
+    <div class="trivia-grid">
+      <!-- 🐶 Dog Fact -->
+      <div class="trivia-card">
+        <div class="card-inner">
+          <div class="card-front">🐶 Dog Fact</div>
+          <div class="card-back">Dogs can learn over 1000 words and gestures!</div>
+        </div>
+      </div>
+
+      <!-- 🐱 Cat Fact -->
+      <div class="trivia-card">
+        <div class="card-inner">
+          <div class="card-front">🐱 Cat Fact</div>
+          <div class="card-back">Cats use their whiskers to measure gaps before jumping!</div>
+        </div>
+      </div>
+
+      <!-- ❤️ Care Tip -->
+      <div class="trivia-card">
+        <div class="card-inner">
+          <div class="card-front">❤️ Care Tip</div>
+          <div class="card-back">Regular vet visits can catch hidden health problems early!</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ❓ FAQ MODAL -->
+<div id="faqModal" class="modal">
+  <div class="modal-content faq-modal">
+    <span class="close-faq">&times;</span>
+    <h2>❓ Frequently Asked Questions</h2>
+    <p class="subtitle">Got questions? We’re here to help you understand adoption and care better!</p>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <h4>🐾 How can I adopt a pet?</h4>
+        <p>Visit our Adoption Page and fill out the short application form. Our team will contact you within 1–3 days for screening and meet-up details.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>💰 Is there an adoption fee?</h4>
+        <p>Yes — a small adoption fee helps cover vaccination, deworming, and care essentials before you take your pet home.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>🏠 Can I surrender a pet?</h4>
+        <p>If you can no longer care for your pet, please contact us. We’ll help you rehome responsibly and safely.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>🩺 Do pets come vaccinated?</h4>
+        <p>Yes! All rescues go through vet checkups, vaccination, and deworming before adoption.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>📍 Where is Furever Home PH located?</h4>
+        <p>We’re based in the Philippines, and we coordinate adoptions locally with trusted partner shelters.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script>
+  // 🌟 Interactive search dropdown + section reveal
+  const searchInput = document.getElementById("searchInput");
+  const suggestionsList = document.getElementById("suggestionsList");
+  const infoBoxes = document.querySelectorAll(".info-box");
+
+  searchInput.addEventListener("focus", () => {
+    suggestionsList.style.display = "block";
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".search-box")) {
+      suggestionsList.style.display = "none";
+    }
+  });
+
+  suggestionsList.addEventListener("click", (e) => {
+    const targetId = e.target.getAttribute("data-target");
+    if (!targetId) return;
+
+    infoBoxes.forEach((box) => (box.style.display = "none"));
+    document.getElementById(targetId).style.display = "block";
+    suggestionsList.style.display = "none";
+    searchInput.value = e.target.textContent.trim();
+  });
+
+  searchInput.addEventListener("input", () => {
+  const filter = searchInput.value.toLowerCase();
+  const options = suggestionsList.querySelectorAll("p");
+  options.forEach(option => {
+    option.style.display = option.textContent.toLowerCase().includes(filter)
+      ? "block"
+      : "none";
+  });
+});
+
+// 🐾 Food Guide Modal Script
+const foodModal = document.getElementById("foodModal");
+const closeBtn = document.querySelector(".close-btn");
+const foodGuideBox = document.getElementById("food");
+
+// Open modal when Food Guide is selected
+foodGuideBox.addEventListener("click", () => {
+  foodModal.style.display = "flex";
+});
+
+// Close modal when X is clicked
+closeBtn.addEventListener("click", () => {
+  foodModal.style.display = "none";
+});
+
+// Close when clicking outside the modal
+window.addEventListener("click", (e) => {
+  if (e.target === foodModal) {
+    foodModal.style.display = "none";
+  }
+});
+
+// 🎨 Color Coats Modal Script
+const coatModal = document.getElementById("coatModal");
+const closeCoat = document.querySelector(".close-coat");
+const coatBox = document.getElementById("coats");
+
+// Open modal when Color Coats is clicked
+coatBox.addEventListener("click", () => {
+  coatModal.style.display = "flex";
+});
+
+// Close when X is clicked
+closeCoat.addEventListener("click", () => {
+  coatModal.style.display = "none";
+});
+
+// Close when clicking outside the modal
+window.addEventListener("click", (e) => {
+  if (e.target === coatModal) {
+    coatModal.style.display = "none";
+  }
+});
+
+// 💡 Trivia Modal Script
+const triviaModal = document.getElementById("triviaModal");
+const closeTrivia = document.querySelector(".close-trivia");
+const triviaBox = document.getElementById("trivia");
+
+// Open modal when Trivia Corner is clicked
+triviaBox.addEventListener("click", () => {
+  triviaModal.style.display = "flex";
+});
+
+// Close modal when X is clicked
+closeTrivia.addEventListener("click", () => {
+  triviaModal.style.display = "none";
+});
+
+// Close when clicking outside
+window.addEventListener("click", (e) => {
+  if (e.target === triviaModal) {
+    triviaModal.style.display = "none";
+  }
+});
+
+// Flip card on click
+document.querySelectorAll(".card-inner").forEach((card) => {
+  card.addEventListener("click", () => {
+    card.classList.toggle("flipped");
+  });
+});
+
+// ❓ FAQ Modal Script
+const faqModal = document.getElementById("faqModal");
+const closeFaq = document.querySelector(".close-faq");
+const faqBox = document.getElementById("faq");
+
+// Open modal when FAQ is clicked
+faqBox.addEventListener("click", () => {
+  faqModal.style.display = "flex";
+});
+
+// Close modal when X is clicked
+closeFaq.addEventListener("click", () => {
+  faqModal.style.display = "none";
+});
+
+// Close when clicking outside
+window.addEventListener("click", (e) => {
+  if (e.target === faqModal) {
+    faqModal.style.display = "none";
+  }
+});
+
+</script>
+
 
   
 </body>

@@ -1043,401 +1043,357 @@ html {
   box-shadow: 0 12px 25px rgba(28, 49, 68, 0.2);
 }
 
-.food-guide {
-  background: #fdf8f2;
-  padding: 60px 40px 160px;
-  font-family: Arial, sans-serif;
-  position: relative;
-  min-height: 70vh;
-
-  /* Animation */
-  animation: sectionFadeIn 1s ease-out forwards;
+/* 🌟 Search Hub Section */
+.search-hub {
+  background: #2c3e50;
+  padding: 100px 60px;
+  text-align: center;
 }
 
-.food-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
-  width: 100%;
-  margin: 0;
-}
-
-/* LEFT SIDE */
-.food-left h2 {
+.search-container h2 {
   font-size: 2.5rem;
+  color: #ffffff;
   margin-bottom: 10px;
-  color: #a52a2a;
 }
 
-.food-left .tagline {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-  color: #555;
+.search-container .tagline {
+  font-size: 1.1rem;
+  color: #fdfdfd;
+  margin-bottom: 40px;
 }
 
-.food-container {
-  display: flex;
-  flex-direction: row; 
-  justify-content: flex-start;
-  align-items: flex-start;
-  margin-left: 330px;
-  gap: 25px;
-}
-
-.food-box {
-  width: 45%;
-  background: #fff;
-  border-radius: 12px;
-  height: 400px;
-  padding: 60px 25px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-}
-
-.food-box { 
+.search-box {
   position: relative;
-  z-index: 3;
+  display: inline-block;
+  width: 100%;
+  max-width: 600px;
 }
 
-.can-eat {
-  border: 2px solid #28a745;
-  border-left: 5px solid #28a745;
-  background: #ebe8db;
-  border-radius: 20px;
-  padding: 50px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  font-size: larger;
-}
-
-.cannot-eat {
-  border: 2px solid #c0392b;
-  border-left: 5px solid #c0392b;
-  background: #ebe8db;
-  border-radius: 20px;
-  padding: 50px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-.more-info {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
+.search-box input {
+  width: 100%;
+  padding: 15px 20px;
+  border: 2px solid #e9cdad;
+  border-radius: 50px;
   font-size: 1rem;
-  color: #333;
-  cursor: pointer;
-}
-
-/* Remove default arrow from summary */
-.more-info summary {
-  list-style: none;
   outline: none;
+  transition: all 0.3s ease;
 }
-.more-info summary::-webkit-details-marker {
+
+.search-box input:focus {
+  border-color: #f8c697;
+  box-shadow: 0 0 10px rgba(255, 157, 66, 0.3);
+}
+
+.suggestions {
   display: none;
-}
-
-.more-info summary:hover {
-  transform: translateY(-3px);
-  color: #a52a2a;
-  transition: 0.3s ease;
-}
-
-/* Popup content box styling */
-.more-info[open] .popup-content {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   position: absolute;
-  top: -220px;
-  background: #fff;
-  border-radius: 12px;
-  padding: 20px;
-  width: 380px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
-  animation: fadeIn 0.3s ease;
+  width: 100%;
+  top: 55px;
+  left: 0;
   z-index: 10;
 }
 
-.more-info[open] .popup-content::before {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-width: 10px;
-  border-style: solid;
-  border-color: white transparent transparent transparent;
+.suggestions p {
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  text-align: left;
 }
 
-/* Fade-in animation */
+.suggestions p:hover {
+  background: #fff0e0;
+}
+
+/* Info Sections */
+.info-sections {
+  margin-top: 60px;
+}
+
+.info-box {
+  display: none;
+  background: #ffffff;
+  border: 1px solid #f3d7b7;
+  border-radius: 20px;
+  padding: 30px;
+  margin: 30px auto;
+  max-width: 700px;
+  text-align: left;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  animation: fadeIn 0.4s ease;
+}
+
+.info-box h3 {
+  color: #ff9d42;
+  margin-bottom: 10px;
+}
+
+.info-box ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  color: #555;
+}
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-.food-right {
-  text-align: left;
+/* 🐾 Food Guide Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(50, 40, 30, 0.6);
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease-in-out;
 }
 
-.food-right h2 {
-  font-size: 2.5rem;
-  color: #a52a2a;
-  margin-bottom: 10px;
+.modal-content {
+  background: #fff8f2;
+  border-radius: 15px;
+  padding: 30px;
+  width: 85%;
+  max-width: 900px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  animation: slideUp 0.4s ease;
 }
 
-.food-right .subtitle {
-  font-size: 1.5rem;
-  color: #555;
+.close-btn {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 28px;
+  color: #a33;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.close-btn:hover {
+  color: #d22;
+}
+
+.modal h2 {
+  text-align: center;
+  color: #4e342e;
+}
+
+.subtitle {
+  text-align: center;
+  font-style: italic;
+  color: #6b4e3d;
   margin-bottom: 20px;
+}
+
+.food-guide-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.food-section h3 {
+  color: #4e342e;
+  text-align: center;
+}
+
+.food-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.can-eat, .cant-eat {
+  flex: 1;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.can-eat h4 {
+  color: #2e7d32;
+}
+
+.cant-eat h4 {
+  color: #c62828;
+}
+
+.can-eat ul li, .cant-eat ul li {
+  margin: 5px 0;
+  color: #444;
+}
+
+/* ✨ Animations */
+@keyframes fadeIn {
+  from { opacity: 0; } to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* 🎨 Color Coats Modal */
+.coat-boxes {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.coat-group {
+  text-align: center;
+}
+
+.coat-group h3 {
+  color: #4e342e;
+  margin-bottom: 15px;
 }
 
 .bubbles {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 8px;
+  gap: 15px;
 }
 
 .bubble {
-  padding: 10px 20px;
-  border-radius: 25px;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #fff;
-  border: 2px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 30px;
+  font-weight: bold;
+  color: white;
+  font-size: 16px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .bubble:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.25);
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
-/* Dog coat colors */
-.bubble.golden { background: #e08b34; border-color: #b56a1e; }
-.bubble.brindle { background: #8b5e3c; border-color: #5a3b24; }
-.bubble.black { background: #222; border-color: #444; }
-.bubble.white { background: #ffffff; color: #222; border-color: #ccc; }
+/* 🌈 Dog Coat Colors */
+.bubble.golden { background: #e6b800; }
+.bubble.brindle { background: linear-gradient(135deg, #8b5e3c, #4b3621); }
+.bubble.black { background: #222; }
+.bubble.white { background: #f5f5f5; color: #444; border: 1px solid #ccc; }
+.bubble.tricolor { background: linear-gradient(90deg, #000 33%, #fff 33%, #a0522d 66%); }
 
-.bubble.tricolor {
-  background: linear-gradient(90deg, #8b5e3c 0%, #ffffff 50%, #222 100%);
-  border-color: #5a3b24;
-  color: #fff;
-}
+/* 🌈 Cat Coat Colors */
+.bubble.calico { background: linear-gradient(135deg, #f4a261, #ffffff, #232525); }
+.bubble.tabby { background: linear-gradient(135deg, #d2b48c, #8b5e3c); }
+.bubble.tuxedo { background: linear-gradient(135deg, #000, #fff); color: #333; }
+.bubble.ginger { background: #ff7043; }
+.bubble.colorpoint { background: linear-gradient(135deg, #e0c097, #6f4e37); }
 
-/* Cat coat colors */
-.bubble.calico {
-  background: linear-gradient(90deg, #e67e22 0%, #fff 33%, #000 66%, #e67e22 100%);
-  color: #111;
-  font-weight: 700;
-  border-color: #333;
-  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7),
-               -1px -1px 2px rgba(0, 0, 0, 0.5);
+
+/* 💡 Trivia Modal Styles */
+.trivia-modal {
+  text-align: center;
 }
 
-.bubble.tricolor {
-  background: linear-gradient(90deg, #8b5a2b 0%, #fff 50%, #000 100%);
-  color: #111;
-  font-weight: 700;
-  border-color: #333;
-  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7),
-               -1px -1px 2px rgba(0, 0, 0, 0.5);
-}
-
-.bubble.tuxedo {
-  background: linear-gradient(90deg, #000 45%, #fff 55%);
-  color: #111;
-  font-weight: 700;
-  border-color: #222;
-  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8),
-               -1px -1px 2px rgba(0, 0, 0, 0.5);
-}
-
-.bubble.tabby { background: #b88746; border-color: #805d2f; }
-.bubble.tuxedo {
-  background: linear-gradient(90deg, #000 45%, #fff 55%);
-  color: #111;
-  font-weight: 700;
-  border-color: #222;
-  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8),
-               -1px -1px 2px rgba(0, 0, 0, 0.5);
-}
-.bubble.ginger { background: #d3502d; border-color: #a6361a; }
-.bubble.colorpoint { background: #9c7761; border-color: #6b4f3f; }
-
-/* Trivia Section */
-.trivia-section h3 {
-  margin-top: 30px;
-  margin-bottom: 5px;
-  color: #333;
-  margin-right: 100px;
-}
-.trivia-section p {
-  color: #777;
-  margin-bottom: 20px;
-}
 .trivia-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: flex-start;
-  align-items: flex-start; 
-  margin-left: 0; 
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 25px;
+  justify-content: center;
+  margin-top: 30px;
 }
 
-/* Flip Card */
 .trivia-card {
   perspective: 1000px;
-  width: 250px;
-  height: 150px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  will-change: transform;
 }
+
 .card-inner {
-  position: relative;
   width: 100%;
-  height: 100%;
-  text-align: center;
+  height: 150px;
+  transition: transform 0.8s;
   transform-style: preserve-3d;
-  transition: transform 1s;
   cursor: pointer;
+  position: relative;
 }
-.trivia-card:hover .card-inner,
-.trivia-card:active .card-inner {
-  transform: rotateY(180deg);
-}
-.trivia-card:hover {
-  z-index: 10; 
-}
+
 .card-front,
 .card-back {
   position: absolute;
   width: 100%;
   height: 100%;
-  border-radius: 20px;
   backface-visibility: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border-radius: 15px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  font-weight: 600;
+  justify-content: center;
+  font-weight: bold;
   padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+/* Front and back colors */
 .card-front {
-  background: #fff;
-  color: #333;
+  background: linear-gradient(135deg, #ffcc80, #ffb74d);
+  color: #4e342e;
 }
+
 .card-back {
-  color: #fff;
+  background: linear-gradient(135deg, #fff8e1, #ffe0b2);
+  color: #5d4037;
   transform: rotateY(180deg);
 }
 
-/* Each back color */
-.trivia-card:nth-child(1) .card-back { background: #f4a261; }
-.trivia-card:nth-child(2) .card-back { background: #2a9d8f; }
-.trivia-card:nth-child(3) .card-back { background: #e76f51; }
-
-/* Bottom strip */
-.bottom-strip {
-  background: #446c96;
-  height: 160px;
-  width: 100vw; 
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-top: 60px;
-  overflow: visible;
-  padding-bottom: 150px;
+/* Flip effect */
+.card-inner.flipped {
+  transform: rotateY(180deg);
 }
 
-/* Shared pet image style */
-.pet {
-  position: absolute;
-  bottom: 0;
-  height: 260px;
-  z-index: 3;
+/* ❓ FAQ Modal Styles */
+.faq-modal {
+  max-width: 700px;
+  text-align: left;
+  background-color: #fffaf3;
 }
 
-.pet-left {
-  position: absolute;
-  top: -310%;
-  left: 0%;
-  height: 550px;
-  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
-  z-index: 1; /* lower than the boxes */
-  transition: all 0.3s ease;
+.faq-list {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
-/* Right image (dog with food bowl) */
-.pet-right {
-  right: 0%;    
-  height: 500px;      
-  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
-  z-index: 2;
-  transition: all 0.3s ease;
-  pointer-events: none;
+.faq-item {
+  background: #fff8e1;
+  border-left: 5px solid #ffb74d;
+  border-radius: 10px;
+  padding: 15px 20px;
+  transition: 0.3s ease;
 }
 
-/* Responsive (mobile view) */
-@media (max-width: 900px) {
-  .food-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .food-right {
-    margin-top: 40px;
-  }
-
-  .food-guide-img {
-    position: static;
-    display: flex;
-    justify-content: center;
-    margin-top: -80px;
-  }
+.faq-item:hover {
+  background-color: #ffe7c2;
+  transform: translateY(-3px);
 }
 
-@keyframes sectionFadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.faq-item h4 {
+  margin: 0 0 8px;
+  color: #6d4c41;
+}
+
+.faq-item p {
+  margin: 0;
+  color: #5d4037;
+  font-size: 0.95rem;
 }
 
 .footer {
-  background: #2c3e50;  
-  color: #fff;
-  width: 100vw;
-  text-align: center;
-  padding: 40px 20px;
-  font-family: Arial, sans-serif;
-  position: relative;  
-  z-index: 5;            
-  height: 30vh;
-  
-}
-.footer-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px 40px;    
-  font-size: 1.2rem;       
-  line-height: 1.6;       
+  color: #ffffff; /* makes all footer text white */
 }
 
-.footer a {
-  color: #f4a261;
-  text-decoration: none;
-  font-weight: 700;      
-  font-size: 1.1rem;      
-
-.footer a:hover {
-  text-decoration: underline;
-}
-
-.footer .copy {
-  margin-top: 15px;
-  font-size: 1rem;          
-  color: #fff;          
-}
-}
