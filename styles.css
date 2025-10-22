@@ -618,17 +618,20 @@ html {
   position: absolute;
   top: 145px;
   right: 5.5%;
-  width: 300px;
-  height: 110vh;
-  z-index: 2;
-  background: none;
+  width: 280px;
+  height: auto;
+  max-height: 90vh;
+  z-index: 3;
+  pointer-events: none;
 }
+
 
 .dog-banner img {
   width: 200%;
+  height: auto;
   border-radius: 20px;
   transform: translateX(-15%);
-  object-fit: cover;
+  object-fit: contain;
   box-shadow: 0;
 }
 
@@ -650,7 +653,8 @@ html {
   border-radius: 0;          
   width: 100%;               
   left: 0;
-  height: 100vh;                   
+  height: auto;;     
+  min-height: 100vh;              
 }
 
 /* Keep the title aligned with form boxes */
@@ -706,6 +710,22 @@ html {
   padding-left: 0;     
   align-items: start;
   background: none;
+}
+
+@media (max-width: 1300px) {
+  .three-columns {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .dog-banner {
+    position: relative;
+    margin: 0 auto 30px auto;
+    display: block;
+    top: 0;
+    right: 0;
+    max-width: 300px;
+  }
 }
 
 /* Form Box Shared Style */
@@ -904,6 +924,8 @@ html {
   gap: 25px;
   margin-top: 30px;
   justify-items: center; 
+  position: relative;
+  z-index: 4;
 }
 
 /* Final Success Gallery Image Styles */
@@ -1386,3 +1408,22 @@ html {
   z-index: 1;
 }
 
+.navbar img {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: contain;
+  background-color: #ffffff;
+  padding: 7px;
+  margin-right: 10px; /* adds nice spacing between icons */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: all 0.25s ease;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.navbar img:hover {
+  transform: translateY(-3px) scale(1.07);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background-color: #f7f7f7;
+}
