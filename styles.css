@@ -213,46 +213,6 @@
   to { opacity: 1; transform: translate(-50%, -50%); }
 }
 
-
-/* Navbar */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  height: 60px;
-  padding: 15px 5%;
-  background: #f0e7d5;
-  z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-}
-
-.nav-links a {
-  color: #3a4b59;
-  font-weight: bold;
-  font-size: large;
-}
-
-.nav-links a:hover {
-  opacity: 0.7;
-}
-
-.contact-btn {
-  background: #ff9a47;
-  color: #1c234a !important;
-  padding: 8px 18px;
-  border-radius: 25px;
-}
-
 /* Logo */
 .logo {
   position: absolute;
@@ -689,7 +649,8 @@ html {
   padding: 60px 8%;          
   border-radius: 0;          
   width: 100%;               
-  left: 0;                   
+  left: 0;
+  height: 100vh;                   
 }
 
 /* Keep the title aligned with form boxes */
@@ -1048,16 +1009,23 @@ html {
   background: #2c3e50;
   padding: 100px 60px;
   text-align: center;
+  height: 50vh;
+  justify-content: center;
+}
+
+#search-hub {
+  padding-top: 80px; 
+  margin-top: -80px;
 }
 
 .search-container h2 {
   font-size: 2.5rem;
   color: #ffffff;
-  margin-bottom: 10px;
+  margin-bottom: 50px;
 }
 
 .search-container .tagline {
-  font-size: 1.1rem;
+  font-size: 1.9rem;
   color: #fdfdfd;
   margin-bottom: 40px;
 }
@@ -1065,7 +1033,7 @@ html {
 .search-box {
   position: relative;
   display: inline-block;
-  width: 100%;
+  width: 150%;
   max-width: 600px;
 }
 
@@ -1119,7 +1087,7 @@ html {
   border-radius: 20px;
   padding: 30px;
   margin: 30px auto;
-  max-width: 700px;
+  max-width: 800px;
   text-align: left;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   animation: fadeIn 0.4s ease;
@@ -1165,20 +1133,6 @@ html {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   position: relative;
   animation: slideUp 0.4s ease;
-}
-
-.close-btn {
-  position: absolute;
-  right: 20px;
-  top: 10px;
-  font-size: 28px;
-  color: #a33;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.close-btn:hover {
-  color: #d22;
 }
 
 .modal h2 {
@@ -1394,6 +1348,41 @@ html {
 }
 
 .footer {
-  color: #ffffff; /* makes all footer text white */
+  color: #ffffff;
+}
+
+.close-btn {
+  position: absolute;
+  right: 20px;  /* ⬅️ now on the right corner */
+  top: 10px;
+  font-size: 28px;
+  color: #a33;  /* red tone */
+  cursor: pointer;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+  color: #d22;  /* brighter red on hover */
+}
+
+/* Make navbar always on top and clickable */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  background: rgba(255, 255, 255, 0.8); /* optional slight background */
+  backdrop-filter: blur(6px);
+}
+
+/* Ensure hero or other sections don’t overlap */
+.hero,
+.friends-section,
+.pawsit-section,
+.search-hub {
+  position: relative;
+  z-index: 1;
 }
 

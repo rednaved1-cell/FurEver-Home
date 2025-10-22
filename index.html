@@ -10,17 +10,23 @@
 
 <body>
 
-  <!-- ✅ Navigation -->
-  <header class="navbar">
-    <nav class="nav-links">
-      <a href="#about">About</a>
-      <a href="#friends">Adopt</a>
-      <a href="#success-stories">Stories</a>
-      <a href="#food">Food Guide</a>
-      <a href="#trivia">Trivia</a>
-      <a href="#contact" class="contact-btn">Contact</a>
-    </nav>
-  </header>
+ <!-- ✅ Navigation -->
+<header class="navbar">
+  <div class="social-icons">
+    <a href="#" aria-label="Facebook"><img src="images/facebook-icon.png" alt="Facebook"></a>
+    <a href="#" aria-label="Instagram"><img src="images/instagram-icon.png" alt="Instagram"></a>
+    <a href="#" aria-label="TikTok"><img src="images/tiktok-icon.png" alt="TikTok"></a>
+  </div>
+
+  <nav class="nav-links">
+    <a href="#about">About</a>
+    <a href="#friends">Adopt</a>
+    <a href="#success-stories">Stories</a>
+    <a href="#search-hub">FAQ</a>
+    <a href="#contact" class="contact-btn">Contact</a>
+  </nav>
+</header>
+
 
   <section class="hero">
     <div class="hero-content">
@@ -480,7 +486,7 @@
       <div class="info-box" id="food">
         <h3>🍖 Food Guide</h3>
         <p>
-          Learn what pets can and can’t eat — from everyday meals to special treats.
+          Learn what pets can and can't eat — from everyday meals to special treats.
           Always consult your vet for safe feeding advice.
         </p>
       </div>
@@ -510,7 +516,7 @@
         <ul>
           <li><strong>How can I adopt a pet?</strong> Visit our adoption page and fill out the form.</li>
           <li><strong>Is there an adoption fee?</strong> Yes, a small fee helps cover vet care and food.</li>
-          <li><strong>Can I surrender a pet?</strong> Contact us — we’ll assist with rehoming safely.</li>
+          <li><strong>Can I surrender a pet?</strong> Contact us — we'll assist with rehoming safely.</li>
         </ul>
       </div>
     </div>
@@ -596,7 +602,7 @@
 <!-- 🎨 COLOR COATS MODAL -->
 <div id="coatModal" class="modal">
   <div class="modal-content">
-    <span class="close-coat">&times;</span>
+    <span class="close-btn">&times;</span>
     <h2>🎨 Pet Color Coats</h2>
     <p class="subtitle">Explore the beautiful variety of dog and cat coat colors!</p>
 
@@ -631,7 +637,7 @@
 <!-- 💡 TRIVIA MODAL -->
 <div id="triviaModal" class="modal">
   <div class="modal-content trivia-modal">
-    <span class="close-trivia">&times;</span>
+    <span class="close-btn">&times;</span>
     <h2>💡 Trivia Corner</h2>
     <p class="subtitle">Flip a card to reveal a fun fact or pet care tip!</p>
 
@@ -666,7 +672,7 @@
 <!-- ❓ FAQ MODAL -->
 <div id="faqModal" class="modal">
   <div class="modal-content faq-modal">
-    <span class="close-faq">&times;</span>
+    <span class="close-btn">&times;</span>
     <h2>❓ Frequently Asked Questions</h2>
     <p class="subtitle">Got questions? We’re here to help you understand adoption and care better!</p>
 
@@ -735,103 +741,44 @@
   });
 });
 
-// 🐾 Food Guide Modal Script
-const foodModal = document.getElementById("foodModal");
-const closeBtn = document.querySelector(".close-btn");
-const foodGuideBox = document.getElementById("food");
+// 🐾 UNIVERSAL MODAL SCRIPT
 
-// Open modal when Food Guide is selected
-foodGuideBox.addEventListener("click", () => {
-  foodModal.style.display = "flex";
+// Function to open a modal
+function openModal(modalId) {
+  document.getElementById(modalId).style.display = "flex";
+}
+
+// Function to close a modal
+function closeModal(modal) {
+  modal.style.display = "none";
+}
+
+// Open modals
+document.getElementById("food").addEventListener("click", () => openModal("foodModal"));
+document.getElementById("coats").addEventListener("click", () => openModal("coatModal"));
+document.getElementById("trivia").addEventListener("click", () => openModal("triviaModal"));
+document.getElementById("faq").addEventListener("click", () => openModal("faqModal"));
+
+// Close modals when clicking X
+document.querySelectorAll(".close-btn").forEach(btn => {
+  btn.addEventListener("click", () => closeModal(btn.closest(".modal")));
 });
 
-// Close modal when X is clicked
-closeBtn.addEventListener("click", () => {
-  foodModal.style.display = "none";
-});
-
-// Close when clicking outside the modal
+// Close modals when clicking outside the content
 window.addEventListener("click", (e) => {
-  if (e.target === foodModal) {
-    foodModal.style.display = "none";
+  if (e.target.classList.contains("modal")) {
+    closeModal(e.target);
   }
 });
 
-// 🎨 Color Coats Modal Script
-const coatModal = document.getElementById("coatModal");
-const closeCoat = document.querySelector(".close-coat");
-const coatBox = document.getElementById("coats");
-
-// Open modal when Color Coats is clicked
-coatBox.addEventListener("click", () => {
-  coatModal.style.display = "flex";
-});
-
-// Close when X is clicked
-closeCoat.addEventListener("click", () => {
-  coatModal.style.display = "none";
-});
-
-// Close when clicking outside the modal
-window.addEventListener("click", (e) => {
-  if (e.target === coatModal) {
-    coatModal.style.display = "none";
-  }
-});
-
-// 💡 Trivia Modal Script
-const triviaModal = document.getElementById("triviaModal");
-const closeTrivia = document.querySelector(".close-trivia");
-const triviaBox = document.getElementById("trivia");
-
-// Open modal when Trivia Corner is clicked
-triviaBox.addEventListener("click", () => {
-  triviaModal.style.display = "flex";
-});
-
-// Close modal when X is clicked
-closeTrivia.addEventListener("click", () => {
-  triviaModal.style.display = "none";
-});
-
-// Close when clicking outside
-window.addEventListener("click", (e) => {
-  if (e.target === triviaModal) {
-    triviaModal.style.display = "none";
-  }
-});
-
-// Flip card on click
+// 💡 Trivia flip effect
 document.querySelectorAll(".card-inner").forEach((card) => {
   card.addEventListener("click", () => {
     card.classList.toggle("flipped");
   });
 });
 
-// ❓ FAQ Modal Script
-const faqModal = document.getElementById("faqModal");
-const closeFaq = document.querySelector(".close-faq");
-const faqBox = document.getElementById("faq");
-
-// Open modal when FAQ is clicked
-faqBox.addEventListener("click", () => {
-  faqModal.style.display = "flex";
-});
-
-// Close modal when X is clicked
-closeFaq.addEventListener("click", () => {
-  faqModal.style.display = "none";
-});
-
-// Close when clicking outside
-window.addEventListener("click", (e) => {
-  if (e.target === faqModal) {
-    faqModal.style.display = "none";
-  }
-});
-
 </script>
-
 
   
 </body>
