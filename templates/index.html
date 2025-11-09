@@ -82,19 +82,19 @@
       <div class="flip-card">
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img src="images/rescued cat.jpg" alt="Toby" />
+            <img src="{{ url_for('static', filename='images/rescued cat.jpg') }}" alt="Toby" />
           </div>
           <div class="flip-card-back">
             <h3>Toby's Story</h3>
             <p>Toby was an abandoned cat rescued after a typhoon. It was heartbreaking to see a cat abandoned during such times. She lost her eyes due to an infection she got from exposure to floodwaters and untreated injuries during the disaster.</p>
           </div>
-        </div>
+        </div>p
       </div>
 
       <div class="flip-card">
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img src="images/rescued cat2.jpg" alt="Hope" />
+            <img src="{{ url_for('static', filename='images/rescued cat.jpg') }}" alt="Hope" />
           </div>
           <div class="flip-card-back">
             <h3>Hope's Story</h3>
@@ -106,7 +106,7 @@
       <div class="flip-card">
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img src="images/rescued cat3.jpg" alt="Palico" />
+            <img src="{{ url_for('static', filename='images/rescued cat3.jpg') }}" alt="Palico" />
           </div>
           <div class="flip-card-back">
             <h3>Palico's Story</h3>
@@ -118,7 +118,7 @@
       <div class="flip-card">
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img src="images/rescued dog.jpg" alt="Daisy" />
+            <img src="{{ url_for('static', filename='images/rescued dog.jpg') }}" alt="Daisy" />
           </div>
           <div class="flip-card-back">
             <h3>Daisy's Story</h3>
@@ -130,7 +130,7 @@
       <div class="flip-card">
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img src="images/rescued dog2.jpg" alt="Luna" />
+            <img src="{{ url_for('static', filename='images/rescued dog2.jpg') }}" alt="Luna" />
           </div>
           <div class="flip-card-back">
             <h3>Luna's Story</h3>
@@ -143,7 +143,7 @@
       <div class="flip-card">
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img src="images/rescued cat.jpg" alt="Toby, a small black and white kitten with one visible eye and the other eye area affected, tongue slightly sticking out, sitting on blue fabric on a lap; lower image text reads Toby; Age: 1; Breed: Chartreux; Color: Black and White; emotional tone gentle and resilient" />
+            <img src="{{ url_for('static', filename='images/rescued cat.jpg') }}" alt="Toby, a small black and white kitten with one visible eye and the other eye area affected, tongue slightly sticking out, sitting on blue fabric on a lap; lower image text reads Toby; Age: 1; Breed: Chartreux; Color: Black and White; emotional tone gentle and resilient" />
           </div>
           <div class="flip-card-back">
             <h3>Toby's Story</h3>
@@ -155,7 +155,7 @@
       <div class="flip-card">
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img src="images/rescued cat2.jpg" alt="Hope" />
+            <img src="{{ url_for('static', filename='images/rescued cat2.jpg') }}" alt="Hope" />
           </div>
           <div class="flip-card-back">
             <h3>Hope's Story</h3>
@@ -167,7 +167,7 @@
       <div class="flip-card">
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img src="images/rescued cat3.jpg" alt="Palico" />
+            <img src="{{ url_for('static', filename='images/rescued cat3.jpg') }}" alt="Palico" />
           </div>
           <div class="flip-card-back">
             <h3>Palico's Story</h3>
@@ -179,7 +179,7 @@
       <div class="flip-card">
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img src="images/rescued dog.jpg" alt="Daisy" />
+            <img src="{{ url_for('static', filename='images/rescued dog.jpg') }}" alt="Daisy" />
           </div>
           <div class="flip-card-back">
             <h3>Daisy's Story</h3>
@@ -191,7 +191,7 @@
       <div class="flip-card">
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img src="images/rescued dog2.jpg" alt="Luna" />
+            <img src="{{ url_for('static', filename='images/rescued dog2.jpg') }}" alt="Luna" />
           </div>
           <div class="flip-card-back">
             <h3>Luna's Story</h3>
@@ -215,12 +215,12 @@
 
         <!-- Buddy -->
         <div class="pet-card">
-          <img src="images/Buddy.jpg" alt="Buddy the Dog">
+          <img src="{{ url_for('static', filename='images/Buddy.jpg') }}" alt="Buddy the Dog">
         </div>
 
         <!-- Choco -->
         <div class="pet-card">
-          <img src="images/Choco.jpg" alt="Choco the Dog">
+          <img src="{{ url_for('static', filename='images/Choco.jpg') }}" alt="Choco the Dog">
           <div class="pet-info">
             <h3>Choco</h3>
             <p>Friendly & Playful Dog</p>
@@ -230,7 +230,7 @@
 
         <!-- Hershey -->
         <div class="pet-card">
-          <img src="images/Hershey.jpg" alt="Hershey the Cat">
+          <img src="{{ url_for('static', filename='images/Hershey.jpg') }}" alt="Hershey the Cat">
           <div class="pet-info">
             <h3>Hershey</h3>
             <p>Sweet & Calm Cat</p>
@@ -240,7 +240,7 @@
 
         <!-- Luna -->
         <div class="pet-card">
-          <img src="images/Luna.jpg" alt="Luna the Cat">
+          <img src="{{ url_for('static', filename='images/Luna.jpg') }}" alt="Luna the Cat">
           <div class="pet-info">
             <h3>Luna</h3>
             <p>Charming & Curious Cat</p>
@@ -250,7 +250,7 @@
 
         <!-- Ringo -->
         <div class="pet-card">
-          <img src="images/Ringo.jpg" alt="Ringo the Dog">
+          <img src="{{ url_for('static', filename='images/Ringo.jpg') }}" alt="Ringo the Dog">
           <div class="pet-info">
             <h3>Ringo</h3>
             <p>Protective & Loyal Dog</p>
@@ -260,7 +260,7 @@
 
         <!-- Rocky -->
         <div class="pet-card">
-          <img src="images/Rocky.jpg" alt="Rocky the Dog">
+          <img src="{{ url_for('static', filename='images/Rocky.jpg') }}" alt="Rocky the Dog">
           <div class="pet-info">
             <h3>Rocky</h3>
             <p>Energetic & Fun Dog</p>
@@ -270,7 +270,7 @@
 
         <!-- Summer -->
         <div class="pet-card">
-          <img src="images/Summer.jpg" alt="Summer the Cat">
+          <img src="{{ url_for('static', filename='images/Summer.jpg') }}" alt="Summer the Cat">
           <div class="pet-info">
             <h3>Summer</h3>
             <p>Graceful & Kind Cat</p>
@@ -280,7 +280,7 @@
 
         <!-- Milo -->
         <div class="pet-card">
-          <img src="images/Milo.jpg" alt="Milo the Dog">
+          <img src="{{ url_for('static', filename='images/Milo.jpg') }}" alt="Milo the Dog">
           <div class="pet-info">
             <h3>Milo</h3>
             <p>Cheerful & Loving Dog</p>
@@ -290,7 +290,7 @@
 
         <!-- Cookie -->
         <div class="pet-card">
-          <img src="images/Cookie.jpg" alt="Cookie the Dog">
+          <img src="{{ url_for('static', filename='images/Cookie.jpg') }}" alt="Cookie the Dog">
           <div class="pet-info">
             <h3>Cookie</h3>
             <p>Sweet & Playful Dog</p>
@@ -300,7 +300,7 @@
 
         <!-- Browny -->
         <div class="pet-card">
-          <img src="images/Browny.jpg" alt="Browny the Dog">
+          <img src="{{ url_for('static', filename='images/Browny.jpg') }}" alt="Browny the Dog">
           <div class="pet-info">
             <h3>Browny</h3>
             <p>Loyal & Gentle Dog</p>
@@ -375,15 +375,14 @@
         </div>
 
         <div class="success-gallery">
-          <img src="images/cathug.png" alt="Success 1">
-          <img src="images/cathug2.png" alt="Success 2">
-          <img src="images/cathuggies.png" alt="Success 3">
-          <img src="images/doggyhug.png" alt="Success 4">
-          <img src="images/dogooohug.png" alt="Success 5">
-          <img src="images/catsihug.png" alt="Success 6">
-          <img src="images/dogsihug.png" alt="Success 7">
-          <img src="images/catsilog.png" alt="Success 8">
-
+          <img src="{{ url_for('static', filename='images/cathug.png') }}" alt="Success 1">
+          <img src="{{ url_for('static', filename='images/cathug2.png') }}" alt="Success 2">
+          <img src="{{ url_for('static', filename='images/cathuggies.png') }}" alt="Success 3">
+          <img src="{{ url_for('static', filename='images/doggyhug.png') }}"src= alt="Success 4">
+          <img src="{{ url_for('static', filename='images/dogooohug.png') }}" alt="Success 5">
+          <img src="{{ url_for('static', filename='images/catsihug.png') }}" alt="Success 6">
+          <img src="{{ url_for('static', filename='images/dogsihug.png') }}" alt="Success 7">
+          <img src="{{ url_for('static', filename='images/catsilog.png') }}" alt="Success 8">
           <!-- Button -->
           <button class="see-more-stories-btn">See more Stories...</button>
         </div>
@@ -395,32 +394,32 @@
     <h2>Rescue Stories</h2>
     <div class="story-grid">
       <div class="story-card">
-        <img src="images/Bella.jpg" alt="Bella">
+        <img src="{{ url_for('static', filename='images/Bella.jpg') }}" alt="Bella">
         <h3>Bella</h3>
         <p>Rescued from the streets, Bella now spends her days napping in sunny spots and cuddling with her new family.</p>
       </div>
       <div class="story-card">
-        <img src="images/Max1.jpg" alt="Max">
+        <img src="{{ url_for('static', filename='images/Max1.jpg') }}" alt="Max">
         <h3>Max</h3>
         <p>Found injured, Max was nursed back to health and adopted by a loving couple who take him hiking every weekend.</p>
       </div>
       <div class="story-card">
-        <img src="images/Luna1.jpeg" alt="Luna">
+        <img src="{{ url_for('static', filename='images/Luna1.jpeg') }}" alt="Luna">
         <h3>Luna</h3>
         <p>Once a stray, Luna now has a cozy home and a best friend — another rescued cat named Yuumi.</p>
       </div>
       <div class="story-card">
-        <img src="images/Charlie1.jpg" alt="Charlie">
+        <img src="{{ url_for('static', filename='images/Charlie1.jpg') }}" alt="Charlie">
         <h3>Charlie</h3>
         <p>Charlie was found abandoned but now enjoys a big backyard and endless fetch sessions.</p>
       </div>
       <div class="story-card">
-        <img src="images/Milo1.jpg" alt="Milo">
+        <img src="{{ url_for('static', filename='images/Milo1.jpg') }}" alt="Milo">
         <h3>Milo</h3>
         <p>Saved from a flood, Milo has grown into a gentle companion who loves everyone he meets.</p>
       </div>
       <div class="story-card">
-        <img src="images/Yuumi1.png" alt="Yuumi">
+        <img src="{{ url_for('static', filename='images/Yuumi1.png') }}" alt="Yuumi">
         <h3>Yuumi</h3>
         <p>Rescued from a busy street, Yuumi is now a playful kitten who brings joy to her new family.</p>
       </div>
@@ -438,7 +437,7 @@
 
     <!-- 🐶 Dog Banner -->
     <div class="dog-banner">
-      <img src="images/awaw.png" alt="Dog collage">
+      <img src="{{ url_for('static', filename='images/awaw.png') }}" alt="Dog collage">
     </div>
   </section>
 
@@ -449,17 +448,17 @@
     <h2>More Stories of Rescued Kittens</h2>
     <div style="display: flex; flex-direction: column; gap: 10px;">
       <div style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px; padding: 15px; text-align: center;">
-        <img src="images/KittenStory1.jpg" alt="Toby the Cat" style="width: 60%; height: auto; border-radius: 5px; margin-bottom: 10px;">
+        <img src="{{ url_for('static', filename='images/KittenStory1.jpg') }}" alt="Toby the Cat" style="width: 60%; height: auto; border-radius: 5px; margin-bottom: 10px;">
         <h3>Kitten Story 1: Rengar's Rescue</h3>
         <p>Rengar was found alone on the streets, rescued, and now he's full of energy and love in his new home.</p>
       </div>
       <div style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px; padding: 15px; text-align: center;">
-        <img src="images/KittenStory2.avif" alt="Hope the Cat" style="width: 60%; height: auto; border-radius: 5px; margin-bottom: 10px;">
+        <img src="{{ url_for('static', filename='images/KittenStory2.avif') }}" alt="Hope the Cat" style="width: 60%; height: auto; border-radius: 5px; margin-bottom: 10px;">
         <h3>Kitten Story 2: Moon's Journey</h3>
         <p>Moon was saved from a shelter and has become a sweet companion, bringing joy to her family.</p>
       </div>
       <div style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px; padding: 15px; text-align: center;">
-        <img src="images/KittenStory3.jpg" alt="Palico the Cat" style="width: 60%; height: auto; border-radius: 5px; margin-bottom: 10px;">
+        <img src="{{ url_for('static', filename='images/KittenStory3.jpg') }}" alt="Palico the Cat" style="width: 60%; height: auto; border-radius: 5px; margin-bottom: 10px;">
         <h3>Kitten Story 3: Chico's Adventure</h3>
         <p>Chico was rescued during a storm and now enjoys a warm home, full of purrs and play.</p>
       </div>
