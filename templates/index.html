@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>FurEver Home PH — From Stray to Stay</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 </head>
 
@@ -13,10 +13,18 @@
  <!-- ✅ Navigation -->
 <header class="navbar">
   <div class="social-icons">
-    <a href="#" aria-label="Facebook"><img src="images/facebook-icon.png" alt="Facebook"></a>
-    <a href="#" aria-label="Instagram"><img src="images/instagram-icon.jpg" alt="Instagram"></a>
-    <a href="#" aria-label="TikTok"><img src="images/tiktok-icon.png" alt="TikTok"></a>
+    <a href="#" aria-label="Facebook">
+      <img src="{{ url_for('static', filename='images/facebook-icon.png') }}" alt="Facebook">
+    </a>
+    <a href="#" aria-label="Instagram">
+      <img src="{{ url_for('static', filename='images/instagram-icon.jpg') }}" alt="Instagram">
+    </a>
+    <a href="#" aria-label="TikTok">
+      <img src="{{ url_for('static', filename='images/tiktok-icon.png') }}" alt="TikTok">
+    </a>
   </div>
+</header>
+
 
   <nav class="nav-links">
     <a href="#about">About</a>
@@ -34,7 +42,7 @@
       <h1 class="title">FUREVER HOME PH</h1>
     </div>
 
-    <img src="images/logo.png" alt="FurEver Home PH Logo" class="logo">
+    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="FurEver Home PH Logo" class="logo">
 
     <!-- Mission Pills -->
     <div class="mission-pills">
@@ -49,7 +57,7 @@
   <!-- ❤️ ABOUT / OUR MISSION -->
   <section id="about" class="about reveal">
     <div class="about-container">
-      <img src="images/logo.png" alt="FurEver Home PH Logo" class="about-logo">
+      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="FurEver Home PH Logo" class="about-logo">
       <h2>Our Mission</h2>
       <p>
         Our mission is to rescue and restore the lives of stray and neglected dogs and cats — 
@@ -459,7 +467,7 @@
   </div>
 </div>
 
-  <script src="scripts/main.js"></script>
+  <script src="{{ url_for('static', filename='scripts/main.js') }}"></script>
 
   <!-- 🌟 Interactive Search Hub Section -->
 <section id="search-hub" class="search-hub">
